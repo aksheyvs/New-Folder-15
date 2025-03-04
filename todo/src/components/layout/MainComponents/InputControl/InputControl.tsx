@@ -8,11 +8,13 @@ export type Todo = { key: string; name: string; completed: boolean };
 function InputControl() {
     const { setItem, getItem } = useLocalStorage("todoArray");
     const [inputValue, setInputValue] = useState("");
+    const [todoArray, setTodoArray] = useState();
 
     const addTodo = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             let todoArray = getItem();
             todoArray.push({ key: uuidv4(), name: inputValue, completed: false });
+            setTodoArray(todoArray);
             setItem(todoArray);
             setInputValue("");
         }
@@ -22,7 +24,7 @@ function InputControl() {
     };
 
     return (
-        <TodoListSectionContext.Provider value={}>
+        <TodoListSectionContext.Provider value={todoArray}>
             <input
                 type="text"
                 className="todo-input"

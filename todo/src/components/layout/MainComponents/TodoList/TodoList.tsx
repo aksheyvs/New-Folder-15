@@ -1,9 +1,10 @@
-import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+import { useContext } from "react";
+import { TodoListSectionContext } from "../../../../context/TodoListSectionContext";
 
 function TodoList() {
-    const { getItem } = useLocalStorage("todoArray");
+    let todoArray = useContext(TodoListSectionContext);
 
-    console.log(getItem());
+    console.log(todoArray);
 
     return (
         <ul className="todo-list">
