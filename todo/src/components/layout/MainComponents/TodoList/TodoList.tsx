@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { TodoListSectionContext } from "../../../../context/TodoListSectionContext";
+import { useTodoListSectionContext } from "../../../../context/TodoListSectionContext";
 
 function TodoList() {
-    let todoArray = useContext(TodoListSectionContext);
+    let todoArray = useTodoListSectionContext();
 
     console.log(todoArray);
 
