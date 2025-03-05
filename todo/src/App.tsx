@@ -8,14 +8,12 @@ function App() {
     const { setItem, getItem } = useLocalStorage("todoArray");
     const [todoArray, setTodoArray] = useState(getItem());
 
-    setTodoArray(setItem);
-
     return (
         <div id="root">
             <div className="wrapper light">
                 <div className="container">
                     <Header />
-                    <TodoListSectionContext.Provider value={{ todoArray, setTodoArray }}>
+                    <TodoListSectionContext.Provider value={{ setTodoArray, setItem }}>
                         <MainComponents />
                     </TodoListSectionContext.Provider>
                 </div>
