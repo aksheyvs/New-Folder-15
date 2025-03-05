@@ -8,6 +8,8 @@ function App() {
     const { setItem, getItem } = useLocalStorage("todoArray");
     const [todoArray, setTodoArray] = useState(getItem());
 
+    console.log(todoArray);
+
     return (
         <div id="root">
             <div className="wrapper light">

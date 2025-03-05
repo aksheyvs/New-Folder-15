@@ -1,7 +1,12 @@
-import { createContext, useContext } from "react";
+import { createContext, Dispatch, SetStateAction, useContext } from "react";
 import { Todo } from "../components/layout/MainComponents/InputControl/InputControl";
 
-export const TodoListSectionContext = createContext<Todo | undefined>(undefined);
+type TodoContextType = {
+    setTodoArray: Dispatch<SetStateAction<Todo[]>>;
+    setItem: (todos: Todo[]) => void;
+};
+
+export const TodoListSectionContext = createContext<TodoContextType | undefined>(undefined);
 
 export function useTodoListSectionContext() {
     const todoArray = useContext(TodoListSectionContext);
