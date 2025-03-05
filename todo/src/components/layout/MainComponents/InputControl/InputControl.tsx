@@ -6,12 +6,12 @@ export type Todo = { key: string; name: string; completed: boolean };
 
 function InputControl() {
     const [inputValue, setInputValue] = useState("");
-    const { todoArray, setItem } = useTodoListSectionContext();
+    const { todoArray, setTodoArray } = useTodoListSectionContext();
 
     const addTodo = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
-            todoArray.push({ key: uuidv4(), name: inputValue, completed: false });
-            setItem(todoArray);
+            const newValue = { key: uuidv4(), name: inputValue, completed: false };
+            setTodoArray([...todoArray, newValue]);
             setInputValue("");
         }
 
