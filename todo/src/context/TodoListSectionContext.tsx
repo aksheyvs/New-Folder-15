@@ -4,6 +4,7 @@ import { Todo } from "../components/layout/MainComponents/InputControl/InputCont
 type TodoContextType = {
     setTodoArray: Dispatch<SetStateAction<Todo[]>>;
     setItem: (todos: Todo[]) => void;
+    getItem: () => Todo[];
 };
 
 export const TodoListSectionContext = createContext<TodoContextType | undefined>(undefined);

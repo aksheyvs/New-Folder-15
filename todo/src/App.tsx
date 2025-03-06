@@ -6,16 +6,15 @@ import { TodoListSectionContext } from "./context/TodoListSectionContext";
 
 function App() {
     const { setItem, getItem } = useLocalStorage("todoArray");
+    console.log(useLocalStorage("todoArray"));
     const [todoArray, setTodoArray] = useState(getItem());
-
-    console.log(todoArray);
 
     return (
         <div id="root">
             <div className="wrapper light">
                 <div className="container">
                     <Header />
-                    <TodoListSectionContext.Provider value={{ setTodoArray, setItem }}>
+                    <TodoListSectionContext.Provider value={{ setTodoArray, setItem, getItem }}>
                         <MainComponents />
                     </TodoListSectionContext.Provider>
                 </div>

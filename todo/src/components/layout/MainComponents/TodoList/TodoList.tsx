@@ -1,18 +1,11 @@
 import { useTodoListSectionContext } from "../../../../context/TodoListSectionContext";
 
 function TodoList() {
-    let todoArray = useTodoListSectionContext();
+    const { getItem } = useTodoListSectionContext();
 
-    console.log(todoArray);
+    console.log(useTodoListSectionContext());
 
-    return (
-        <ul className="todo-list">
-            <li>hello</li>
-            <li>hello</li>
-            <li>hello</li>
-            <li>hello</li>
-        </ul>
-    );
+    return <ul className="todo-list">{/* <ul>{todoLists}</ul> */}</ul>;
 }
 
 export default TodoList;
