@@ -13,10 +13,10 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
     useEffect(() => {
         try {
+            localStorage.setItem(key, JSON.stringify(value));
         } catch (error) {
             console.error(`Error saving localStorage key"${key}":`, error);
         }
-        localStorage.setItem(key, JSON.stringify(value));
     }, [key, value]);
 
     return [value, setValue] as const;

@@ -1,5 +1,10 @@
+import { useTodoListSectionContext } from "../../../../../context/TodoListSectionContext";
+
 function TodosCount() {
-    return <div className="todos-count">items left</div>;
+    const { todos } = useTodoListSectionContext();
+
+    const todosCount = todos.length;
+    return <div className="todos-count">`{todosCount} items left`</div>;
 }
 
 export default TodosCount;

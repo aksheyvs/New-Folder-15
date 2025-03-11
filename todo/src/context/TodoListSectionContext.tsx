@@ -4,6 +4,10 @@ import { Todo } from "../components/layout/MainComponents/InputControl/InputCont
 type TodoContextType = {
     todos: Todo[];
     setTodo: Dispatch<SetStateAction<Todo[]>>;
+    updateTodo: (key: string) => void;
+    active: Todo[];
+    completed: Todo[];
+    clearCompleted: () => void;
 };
 
 export const TodoListSectionContext = createContext<TodoContextType | undefined>(undefined);
