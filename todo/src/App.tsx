@@ -5,9 +5,11 @@ import { TodoListSectionContext } from "./context/TodoListSectionContext";
 import { Todo } from "./components/layout/MainComponents/InputControl/InputControl.tsx";
 import { useState } from "react";
 import { PageContext } from "./context/PageContext.tsx";
+import { ThemeContext } from "./context/ThemContext.tsx";
 
 function App() {
     const [todos, setTodo] = useLocalStorage<Todo[]>("todoArray", []);
+    const [theme, setTheme] = useLocalStorage<string>("theme", "wrapper light");
     const [page, setPage] = useState("all");
     const active = todos.filter((todo) => todo.completed === false);
     const completed = todos.filter((todo) => todo.completed === true);
@@ -30,10 +32,13 @@ function App() {
     };
 
     return (
-        <div id="root">
-            <div className="wrapper light">
+        <div id="app-root">
+            <div className={theme}>
                 <div className="container">
-                    <Header />
+                    <ThemeContext.Provider value={{ setTheme }}>
+                        <Header />
+                    </ThemeContext.Provider>
+
                     <TodoListSectionContext.Provider
                         value={{ todos, setTodo, updateTodo, active, completed, clearCompleted }}
                     >

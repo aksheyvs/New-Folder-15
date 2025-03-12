@@ -13,6 +13,12 @@
     color: hsl(236, 9%, 61%);
 }
 
+.wrapper.dark {
+    background-color: hsl(235, 21%, 11%);
+    background-image: url(/bg-desktop-dark.jpg);
+    color: hsl(234, 11%, 52%);
+}
+
 .wrapper {
     width: 100%;
     padding-top: 2.5rem;
@@ -72,6 +78,10 @@ button {
     margin-bottom: 1.4rem;
 }
 
+.wrapper.dark .input-control {
+    background-color: hsl(235, 24%, 19%);
+}
+
 .todo-input {
     width: 100%;
     font-family: "Josefin Sans";
@@ -80,14 +90,26 @@ button {
     border: none;
 }
 
+.wrapper.dark .todo-input {
+    background-color: hsl(235, 24%, 19%);
+}
+
 .todo-list-section {
     background-color: white;
     border-radius: 1rem;
     margin-bottom: 2.4rem;
 }
 
+.wrapper.dark .todo-list-section {
+    background-color: hsl(235, 24%, 19%);
+}
+
 .todo-list {
     list-style: none;
+}
+
+.todo-list li:last-child {
+    border-bottom: none;
 }
 
 .todo-list li {
@@ -99,6 +121,34 @@ button {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     border-bottom: 0.1rem solid hsl(236, 33%, 92%);
+    row-gap: 1.4rem;
+    column-gap: 1.4rem;
+}
+
+.checkbox-border-wrap {
+    padding-top: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.1rem;
+}
+
+.wrapper.dark .checkbox-border-wrap {
+    background: hsl(233, 14%, 35%);
+}
+
+.checkbox {
+    display: flex;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: inherit;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.wrapper.dark .checkbox {
+    background-color: hsl(235, 24%, 19%);
 }
 
 .todo-filter-control {

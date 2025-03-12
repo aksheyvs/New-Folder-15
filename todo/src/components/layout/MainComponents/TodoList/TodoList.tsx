@@ -21,13 +21,16 @@ function TodoList() {
 
     const todoLists = currentTodos.map((todo) => {
         const checkbox = (
-            <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={() => {
-                    updateTodo(todo.key);
-                }}
-            ></input>
+            <div className={"checkbox-border-wrap"}>
+                <input
+                    type="checkbox"
+                    checked={todo.completed}
+                    onChange={() => {
+                        updateTodo(todo.key);
+                    }}
+                    className={"checkbox"}
+                ></input>
+            </div>
         );
 
         const todoTask = (
