@@ -1,7 +1,9 @@
 import { usePageContext } from "../../../../../context/PageContext";
+import { useState } from "react";
 
 function FilterGroupBtn() {
-    const { setPage } = usePageContext();
+    const { page, setPage } = usePageContext();
+    const [active, setActive] = useState("active");
 
     const allPage = () => setPage("all");
     const activePage = () => setPage("active");
@@ -9,17 +11,15 @@ function FilterGroupBtn() {
 
     return (
         <div className="control-btn group">
-            <div className="control-btn group">
-                <button className="btn" onClick={allPage}>
-                    All
-                </button>
-                <button className="btn" onClick={activePage}>
-                    Active
-                </button>
-                <button className="btn" onClick={completedPage}>
-                    Completed
-                </button>
-            </div>
+            <button className={`btn ${page === "all" ? active : ""}`} onClick={allPage}>
+                All
+            </button>
+            <button className={`btn ${page === "active" ? active : ""}`} onClick={activePage}>
+                Active
+            </button>
+            <button className={`btn ${page === "completed" ? active : ""}`} onClick={completedPage}>
+                Completed
+            </button>
         </div>
     );
 }

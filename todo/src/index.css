@@ -2,9 +2,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: "Josefin Sans";
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-weight: 400;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 .wrapper.light {
@@ -21,8 +28,8 @@
 
 .wrapper {
     width: 100%;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: top;
@@ -30,7 +37,7 @@
 }
 
 .container {
-    max-width: 34rem;
+    max-width: 54rem;
     margin-top: 0;
     margin-right: auto;
     margin-bottom: 0;
@@ -42,19 +49,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.4rem;
+    margin-bottom: 4.8rem;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 3.6rem;
     font-weight: 700;
 }
 
 button {
     color: hsl(236, 9%, 61%);
     font-family: "Josefin Sans";
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 400;
 }
 
 .btn {
@@ -63,19 +70,31 @@ button {
     cursor: pointer;
 }
 
+.btn:focus {
+    outline: none;
+}
+
+.btn.active {
+    font-weight: 700;
+}
+
+.wrapper.dark .btn.active {
+    color: hsl(192, 100%, 67%);
+}
+
 .input-control {
     background-color: white;
     width: 100%;
-    height: 4rem;
+    height: 6.4rem;
     display: flex;
     justify-content: stretch;
     align-items: center;
-    padding-top: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
+    padding-top: 2.4rem;
+    padding-right: 2.4rem;
+    padding-bottom: 2.4rem;
+    padding-left: 2.4rem;
     border-radius: 1rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 2.4rem;
 }
 
 .wrapper.dark .input-control {
@@ -85,9 +104,10 @@ button {
 .todo-input {
     width: 100%;
     font-family: "Josefin Sans";
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-weight: 400;
     border: none;
+    outline: none;
 }
 
 .wrapper.dark .todo-input {
@@ -97,11 +117,26 @@ button {
 .todo-list-section {
     background-color: white;
     border-radius: 1rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 4.8rem;
+    box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
 }
 
 .wrapper.dark .todo-list-section {
     background-color: hsl(235, 24%, 19%);
+    box-shadow: -1px 5px 20px 10px rgba(37, 39, 60, 0.2);
+}
+
+.todo-list li {
+    display: flex;
+    flex-direction: row;
+    height: 6.4rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    border-bottom: 0.1rem solid hsl(236, 33%, 92%);
+    row-gap: 2.4rem;
+    column-gap: 2.4rem;
 }
 
 .todo-list {
@@ -112,17 +147,17 @@ button {
     border-bottom: none;
 }
 
-.todo-list li {
-    display: flex;
-    flex-direction: row;
-    height: 3.2rem;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    border-bottom: 0.1rem solid hsl(236, 33%, 92%);
-    row-gap: 1.4rem;
-    column-gap: 1.4rem;
+.wrapper.dark li {
+    border-bottom-color: hsl(237, 14%, 26%);
+}
+
+.todo-list p.completed {
+    color: hsl(233, 11%, 84%);
+    text-decoration-line: line-through;
+}
+
+.wrapper.dark .todo-list p.completed {
+    color: hsl(233, 14%, 35%);
 }
 
 .checkbox-border-wrap {
@@ -138,9 +173,8 @@ button {
 
 .checkbox {
     display: flex;
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: inherit;
+    width: 2.4rem;
+    height: 2.4rem;
     background-color: white;
     justify-content: center;
     align-items: center;
@@ -155,11 +189,15 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1.2rem;
-    padding-right: 1.2rem;
-    padding-bottom: 1.2rem;
-    padding-left: 1.2rem;
+    padding-top: 2.4rem;
+    padding-right: 2.4rem;
+    padding-bottom: 2.4rem;
+    padding-left: 2.4rem;
     border-top: 0.1rem solid hsl(236, 33%, 92%);
+}
+
+.wrapper.dark .todo-filter-control {
+    border-top-color: hsl(237, 14%, 26%);
 }
 
 .control-btn.group {

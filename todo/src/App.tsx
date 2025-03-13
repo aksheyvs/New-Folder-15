@@ -32,21 +32,19 @@ function App() {
     };
 
     return (
-        <div id="app-root">
-            <div className={theme}>
-                <div className="container">
-                    <ThemeContext.Provider value={{ setTheme }}>
-                        <Header />
-                    </ThemeContext.Provider>
+        <div className={theme}>
+            <div className="container">
+                <ThemeContext.Provider value={{ theme, setTheme }}>
+                    <Header />
+                </ThemeContext.Provider>
 
-                    <TodoListSectionContext.Provider
-                        value={{ todos, setTodo, updateTodo, active, completed, clearCompleted }}
-                    >
-                        <PageContext.Provider value={{ page, setPage }}>
-                            <MainComponents />
-                        </PageContext.Provider>
-                    </TodoListSectionContext.Provider>
-                </div>
+                <TodoListSectionContext.Provider
+                    value={{ todos, setTodo, updateTodo, active, completed, clearCompleted }}
+                >
+                    <PageContext.Provider value={{ page, setPage }}>
+                        <MainComponents />
+                    </PageContext.Provider>
+                </TodoListSectionContext.Provider>
             </div>
         </div>
     );

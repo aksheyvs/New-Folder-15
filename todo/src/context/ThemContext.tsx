@@ -1,6 +1,7 @@
 import { createContext, useContext, Dispatch, SetStateAction } from "react";
 
 type ThemeContextType = {
+    theme: string;
     setTheme: Dispatch<SetStateAction<string>>;
 };
 

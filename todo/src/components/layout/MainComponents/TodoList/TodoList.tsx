@@ -29,13 +29,12 @@ function TodoList() {
                         updateTodo(todo.key);
                     }}
                     className={"checkbox"}
+                    id={todo.key}
                 ></input>
             </div>
         );
 
-        const todoTask = (
-            <p style={todo.completed ? { textDecoration: "line-through" } : { textDecoration: "none" }}>{todo.name}</p>
-        );
+        const todoTask = <p className={todo.completed ? "completed" : ""}>{todo.name}</p>;
         const todoLi = (
             <li key={todo.key}>
                 {checkbox}
@@ -46,7 +45,9 @@ function TodoList() {
         return todoLi;
     });
 
-    return <ul className="todo-list">{<ul>{todoLists}</ul>}</ul>;
+    const defaultTodo = <li>There's no task</li>;
+
+    return <ul className="todo-list">{todoLists.length === 0 ? defaultTodo : todoLists}</ul>;
 }
 
 export default TodoList;

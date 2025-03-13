@@ -17,9 +17,6 @@ function InputControl() {
             });
             setInputValue("");
         }
-
-        // console.log(getItem());
-        // console.log(todoArray);
     };
 
     return (
@@ -32,6 +29,7 @@ function InputControl() {
                 setInputValue(e.target.value);
             }}
             onKeyDown={addTodo}
+            id="todoInput"
         />
     );
 }
