@@ -1,9 +1,8 @@
 import { usePageContext } from "../../../../../context/PageContext";
-import { useState } from "react";
 
 function FilterGroupBtn() {
     const { page, setPage } = usePageContext();
-    const [active, setActive] = useState("active");
+    const active = "active";
 
     const allPage = () => setPage("all");
     const activePage = () => setPage("active");
